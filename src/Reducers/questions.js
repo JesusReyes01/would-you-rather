@@ -17,7 +17,7 @@ export default function tweets (state = {}, action) {
                     : state[action.id].likes.concat([action.authedUser])
                 }
             }
-        case SAVE_ANSWER :
+        case ADD_QUESTION :
             const { tweet } = action
 
             let replyingTo = {}
