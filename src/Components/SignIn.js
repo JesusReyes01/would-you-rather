@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 import appImg from '../Images/would-you-rather.png'
+import SignInOptions from './SignInOptions'
 
 const SignIn = (props) => {
-    const { users } = props
-    const [user, setUser] = useState()
+    const { usersId } = props
+    // const [user, setUser] = useState()
     const handleSubmit = () => {
 
     }
@@ -19,8 +20,10 @@ const SignIn = (props) => {
                 <img src={appImg} alt="Would You Rather?" width="200" height="200"/>
                 <h2>Sign In</h2>
                 <form className='sign-in-form' onSubmit={handleSubmit}>
-                    <select >
-
+                    <select>
+                        {usersId.map((id) => (
+                            <SignInOptions id={id} key={id}/> 
+                        ))}
                     </select>
                     <button className='btn'>Sign In</button>
                 </form>
@@ -31,7 +34,7 @@ const SignIn = (props) => {
 function mapStateToProps ({ users }) {
 
     return {
-        usersA: Object.keys(users),
+        usersId: Object.keys(users),
         users
         
     }
