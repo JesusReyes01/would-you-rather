@@ -21,29 +21,40 @@ img {
 }
 
 .sign-in-box {
-  max-width: 600px;
+  max-width: 450px;
   margin: 0 auto;
-  padding: 10px;
-  border: 2px solid blue;
+  border: 2px solid lightgrey;
+  border-radius: 4px;
+  background-color:rgb(8, 119, 211);
 }
 
 .sign-in-header {
-  background-color: lightgrey;
+  background-color: rgb(240, 240, 240);
   height: 50px;
   display:flex;
   flex-direction: column;
   justify-content: center;
   padding: 10px;
+  border-bottom: 1px solid lightgrey;
 }
 
 .sign-in-form {
-  width: 100%;
   max-width: 590px;
-  margin: 0 auto;
+  margin: 10px;
   display: flex;
   flex-direction: column;
 }
 
+.btn {
+  font-size: 20px;
+  margin: 10px 0 0 0;
+  height: 40px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+}
+
+
+/* Nav */
 .nav ul {
   display: flex;
   flex-direction: row;
