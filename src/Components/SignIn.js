@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import appImg from '../Images/would-you-rather.png'
 import UserOptions from './UserOptions'
@@ -6,6 +6,7 @@ import Select from "react-select";
 
 const SignIn = (props) => {
     const { usersId, users } = props
+    const [user, setUser] = useState('')
 
     const handleSubmit = () => {
         console.log(usersId)
@@ -19,12 +20,12 @@ const SignIn = (props) => {
 
     //Custom styling for 'options'
     const styles = {
-        control: (css) => ({...css, height: '40px'}),
-        option: (css) => ({ ...css, alignItems: 'center', display: 'flex', height: 40})
+        control: (css) => ({...css, height: '40px', fontSize: 14}),
+        option: (css) => ({ ...css, alignItems: 'center', display: 'flex', height: 40, fontSize: 14})
     };
 
     return (
-        <div className='sign-in-box center'>
+        <div className='container center'>
             <div className='sign-in-header'>
                 <h3>Welcome to the Would You Rather App!</h3>
                 <span>Please sign in to continue</span>

@@ -4,14 +4,13 @@ import { handleInitialData } from '../Actions/shared'
 import LoadingBar from 'react-redux-loading'
 import Nav from './Nav'
 import SignIn from './SignIn'
+import CreateQuestion from './CreateQuestion'
 
 
 
 const App = (props) => {
   const { dispatch } = props
   useEffect(() => {
-    // const { dispatch } = props
-
     dispatch(handleInitialData())
   }, [])
 
@@ -19,12 +18,16 @@ const App = (props) => {
   
     <div className="App">
       <LoadingBar />
-      <div className='container'>
-        <Nav />
+      <div >
+        {props.loading === true
+        ? null
+        : <Nav/>
+        }
         {props.loading === true
         ? null
         : <div>
             <SignIn/>
+            <CreateQuestion />
           </div>
         }
       </div>
@@ -32,9 +35,9 @@ const App = (props) => {
   );
 }
 
-function mapStateToProps({ authedUser }) {
+function mapStateToProps({ users }) {
   return {
-    loading: authedUser === null
+    loading: Object.keys(users).length === 0
   }
 }
 
