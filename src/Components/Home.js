@@ -27,17 +27,21 @@ const Home = (props) => {
                     <span id='answered'>Answered Questions</span>
                 </div>
             </div>
-            <div className='home-questions'>
-            {/* TODO: questions mapped */}
-            <Question
-                image={props.users['johndoe'].avatarURL}
-                questionOptions={['be superman','be batman']}/>
-
-            </div>
+            <ul className='home-questions'>
+                {props.questionIds.map((id)=>(
+                    <li key={id}>
+                        <Question id={id}/>
+                    </li>
+                ))}
+            </ul>
             
         </div>
     )
 }
 
-const mapStateToProps = reduxState => reduxState
+const mapStateToProps = ({ questions }) => ({
+    questionIds: Object.keys(questions)
+        .sort((a,b) => questions[b].timestamp -  questions[a].timestamp)
+})
+
 export default connect(mapStateToProps)(Home)

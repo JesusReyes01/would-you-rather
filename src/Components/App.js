@@ -6,6 +6,7 @@ import Nav from './Nav'
 import SignIn from './SignIn'
 import CreateQuestion from './CreateQuestion'
 import Home from './Home'
+import QuestionPage from './QuestionPage'
 
 
 
@@ -28,8 +29,9 @@ const App = (props) => {
         ? null
         : <div>
             {/* <SignIn/> */}
-            <Home />
+            {/* <Home /> */}
             {/* <CreateQuestion /> */}
+            {<QuestionPage/>}
           </div>
         }
       </div>

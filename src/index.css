@@ -138,13 +138,13 @@ li {
 .question-content {
   display:flex;
   align-items: center;
-  height: 100px;
+  height: 120px;
 }
 
 .question-image{
-  height: 70px;
+  height: 90px;
   border-radius: 50%;
-  margin: 0 20px 0 20px;
+  margin: 0 10px 0 10px;
 }
 
 .vertical-line {
@@ -152,11 +152,11 @@ li {
   width: 1px;
   display:block;
   /* margin: 0 auto; */
-  height: 80px;
+  height: 90px;
 }
 
 .poll-preview {
-  height: 80px;
+  height: 90px;
   width: 100%;
   display:flex;
   flex-direction: column;
@@ -185,8 +185,20 @@ li {
   
 }
 
+/* Question page  */
+.poll {
+  height: 90px;
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: left;
+}
 
-
+.radio {
+  display: flex;
+}
 
 /* Create Question */
 
