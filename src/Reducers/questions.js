@@ -5,7 +5,7 @@ export default function tweets (state = {}, action) {
         case RECEIVE_QUESTIONS :
             return {
                 ...state,
-                ...action.tweets
+                ...action.questions
             }
         case SAVE_ANSWER :
             return {

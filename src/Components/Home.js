@@ -29,7 +29,9 @@ const Home = (props) => {
             </div>
             <div className='home-questions'>
             {/* TODO: questions mapped */}
-            <Question/>
+            <Question
+                image={props.users['johndoe'].avatarURL}
+                questionOptions={['be superman','be batman']}/>
 
             </div>
             
