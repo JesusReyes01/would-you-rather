@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Fragment } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../Actions/shared'
 import LoadingBar from 'react-redux-loading'
@@ -18,24 +19,26 @@ const App = (props) => {
 
   return (
   
-    <div className="App">
-      <LoadingBar />
-      <div >
-        {props.loading === true
-        ? null
-        : <Nav/>
-        }
-        {props.loading === true
-        ? null
-        : <div>
-            {/* <SignIn/> */}
-            {/* <Home /> */}
-            {/* <CreateQuestion /> */}
-            {<QuestionPage/>}
-          </div>
-        }
-      </div>
-    </div>
+    <Router>
+      <Fragment>
+        <LoadingBar />
+        <div >
+          {props.loading === true
+          ? null
+          : <Nav/>
+          }
+          {props.loading === true
+          ? null
+          : <div>
+              <Route path='/' exact component={SignIn} />
+              <Route path='/home' component={Home} />
+              {/* <CreateQuestion /> */}
+              {/* {<QuestionPage/>} */}
+            </div>
+          }
+        </div>
+      </Fragment>
+    </Router>
   );
 }
 

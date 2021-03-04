@@ -24,6 +24,16 @@ img {
   padding: 15px;
 }
 
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none;
+}
+
 ::placeholder {
   color: lightgrey;
   font-size: 14px;
@@ -37,8 +47,6 @@ img {
   border-radius: 4px;
   /* background-color: rgb(137, 148, 241); */
 }
-
-
 
 /* Nav */
 .nav {
@@ -54,16 +62,6 @@ img {
 
 .nav li:first-child {
   padding-left: 200px;
-}
-
-ul {
-  padding-left: 0;
-}
-
-li {
-  list-style-type: none;
-  padding: 10px;
-  text-decoration: none;
 }
 
 /* Shared */
@@ -98,7 +96,6 @@ li {
 }
 
 /* Home */
-
 .home-header {
   display: flex;
 }
@@ -116,8 +113,16 @@ li {
   cursor: pointer;
 }
 
+.container ul{
+  margin: 0;
+}
+
 .home-questions {
-  padding: 10px;
+  padding-top: 10px;
+}
+
+.home-questions li {
+  padding: 0 10px 10px 10px;
 }
 
 .selected {

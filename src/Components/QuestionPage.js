@@ -44,7 +44,6 @@ const QuestionPage = (props) => {
                         {optionTwoText}</label>
                     <button 
                         className='poll-button' 
-                        // onClick={handleSubmit}
                         type='button'
                         disabled={option !== 'optionOne' || option !== 'optionTwo'}>Submit</button>
                 </form>
