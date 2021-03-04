@@ -30,7 +30,13 @@ img {
   /* background-color: rgb(137, 148, 241); */
 }
 
+
+
 /* Nav */
+.nav {
+  border-bottom: 2px solid grey;
+  margin-bottom: 10px;
+}
 .nav ul {
   display: flex;
   flex-direction: row;
@@ -81,6 +87,33 @@ li {
   margin: 10px;
   display: flex;
   flex-direction: column;
+}
+
+/* Home */
+
+.home-header {
+  display: flex;
+}
+
+.home-header-tab {
+  width: 50%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid lightgrey;
+}
+
+.home-header-tab:hover{
+  cursor: pointer;
+}
+
+.home-questions {
+  padding: 10px;
+}
+
+.selected {
+  background-color: lightgrey;
 }
 
 /* Create Question */

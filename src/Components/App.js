@@ -5,6 +5,7 @@ import LoadingBar from 'react-redux-loading'
 import Nav from './Nav'
 import SignIn from './SignIn'
 import CreateQuestion from './CreateQuestion'
+import Home from './Home'
 
 
 
@@ -26,8 +27,9 @@ const App = (props) => {
         {props.loading === true
         ? null
         : <div>
-            <SignIn/>
-            <CreateQuestion />
+            {/* <SignIn/> */}
+            <Home />
+            {/* <CreateQuestion /> */}
           </div>
         }
       </div>
