@@ -54,14 +54,23 @@ li {
   margin-bottom: 10px;
 }
 .nav ul {
+  height: 50px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: row; */
+  /* justify-content: flex-start; */
+  /* text-decoration: none; */
+  margin-bottom: 0;
 }
 
-.nav li:first-child {
-  padding-left: 200px;
+.nav li:nth-child(4) {
+  padding-left: 100px;
+}
+
+.nav-image {
+  height: 30px;
+  border-radius: 50%;
 }
 
 /* Shared */
