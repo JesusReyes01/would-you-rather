@@ -10,7 +10,7 @@ export function setAuthedUser (id) {
 
 export function logoutUser () {
     return {
-        type: SET_AUTHED_USER,
+        type: LOGOUT_USER,
         payload: null,
     }
 }

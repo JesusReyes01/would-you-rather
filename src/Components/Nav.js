@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { logoutUser } from '../Actions/authedUser'
+import { withRouter } from 'react-router-dom'
 
 const Nav = (props) => {
     const { authedUser, users, dispatch, history } = props
@@ -50,4 +51,4 @@ const mapStateToProps = ({ authedUser, users }) => ({
     users
 })
 
-export default connect(mapStateToProps)(Nav)
+export default withRouter(connect(mapStateToProps)(Nav))
