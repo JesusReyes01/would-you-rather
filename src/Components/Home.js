@@ -39,7 +39,8 @@ const Home = (props) => {
     )
 }
 
-const mapStateToProps = ({ questions }) => ({
+const mapStateToProps = ({ questions, authedUser }) => ({
+    authedUser,
     questionIds: Object.keys(questions)
         .sort((a,b) => questions[b].timestamp -  questions[a].timestamp)
 })

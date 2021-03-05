@@ -3,17 +3,25 @@ import { connect } from 'react-redux'
 import appImg from '../Images/would-you-rather.png'
 import UserOptions from './UserOptions'
 import Select from "react-select";
+import { setAuthedUser } from '../Actions/authedUser'
 
 const SignIn = (props) => {
-    const { usersId, users } = props
+    const { usersId, users, dispatch, history } = props
     const [user, setUser] = useState('')
 
+    const handleSelect = e => {
+        setUser(e.value)
+    }
+    
+
     const handleSubmit = () => {
-        console.log(usersId)
+        dispatch(setAuthedUser(user))
+        history.push('/home')
+
     }
     
     const options = usersId.map( e => ({
-        value: users[e],
+        value: users[e].id,
         label: users[e].name,
         icon: users[e].avatarURL,
     }))
@@ -39,6 +47,7 @@ const SignIn = (props) => {
                         options={options}
                         components={{ Option: UserOptions}}
                         styles={styles}
+                        onChange={handleSelect}
                         
                     />
                     {/* <select>
@@ -46,14 +55,15 @@ const SignIn = (props) => {
                             <Options id={id} key={id}/> 
                         ))}
                     </select> */}
-                    <button className='btn'>Sign In</button>
+                    <button 
+                        className='btn'
+                        disabled={user === ''}>Sign In</button>
                 </form>
             </div>
         </div>
     );
 }
 function mapStateToProps ({ users }) {
-
     return {
         usersId: Object.keys(users).sort(),
         users    
