@@ -104,6 +104,34 @@ li {
   flex-direction: column;
 }
 
+.css-xugltl-control {
+  min-height: 30px !important;
+  height: 30px !important;
+  align-items: center !important;
+}
+
+.css-1t7a5ts-control{
+  min-height: 30px !important;
+  height: 30px !important;
+}
+
+.css-tlfecz-indicatorContainer{
+  padding: 0 5px 0 5px !important;
+
+}
+
+/* .css-1hb7zxy-IndicatorsContainer {
+  height: 30px !important;
+} */
+
+.css-1gtu0rj-indicatorContainer{
+  padding: 0 5px 0 5px !important;
+}
+
+.css-1okebmr-indicatorSeparator {
+  margin: 5px 0 5px 0 !important;
+}
+
 /* Home */
 .home-header {
   display: flex;
