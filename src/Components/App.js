@@ -8,6 +8,7 @@ import SignIn from './SignIn'
 import CreateQuestion from './CreateQuestion'
 import Home from './Home'
 import QuestionPage from './QuestionPage'
+import LeaderBoard from './LeaderBoard'
 
 
 
@@ -34,6 +35,7 @@ const App = (props) => {
               <Route path='/home' component={Home} />
               <Route path='/new' component={CreateQuestion} />
               <Route path='/question' component={QuestionPage} />
+              <Route path='/leaderboard' component={LeaderBoard} />
             </div>
           }
         </div>

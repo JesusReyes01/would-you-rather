@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 
 
 const CreateQuestion = (props) => {
@@ -56,4 +57,4 @@ const CreateQuestion = (props) => {
     )
 }
 
-export default CreateQuestion
+export default connect()(CreateQuestion)

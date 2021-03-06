@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { logoutUser } from '../Actions/authedUser'
-import { withRouter } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
 const Nav = (props) => {
     const { authedUser, users, dispatch, history } = props
@@ -14,13 +14,13 @@ const Nav = (props) => {
         <nav className='nav'>
             <ul>
                 <li>
-                    Home
+                    <NavLink to={'/home'}>Home</NavLink>
                 </li>
                 <li>
-                    New Question 
+                    <NavLink to={'/new'}>New Question</NavLink>
                 </li>
                 <li>
-                    Leaderboard 
+                <NavLink to={'/leaderboard'}>Leader Board</NavLink>
                 </li>
                 {authedUser ? 
                 <>

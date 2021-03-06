@@ -1,0 +1,32 @@
+.home-header {
+    display: flex;
+  }
+  
+  .home-header-tab {
+    width: 50%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid lightgrey;
+  }
+  
+  .home-header-tab:hover{
+    cursor: pointer;
+  }
+  
+  .container ul{
+    margin: 0;
+  }
+  
+  .home-questions {
+    padding-top: 10px;
+  }
+  
+  .home-questions li {
+    padding: 0 10px 10px 10px;
+  }
+  
+  .selected {
+    background-color: lightgrey;
+  }

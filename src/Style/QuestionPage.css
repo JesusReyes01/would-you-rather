@@ -1,0 +1,13 @@
+.poll {
+    height: 90px;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .radio {
+    display: flex;
+  }

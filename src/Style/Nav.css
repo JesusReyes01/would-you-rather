@@ -1,0 +1,44 @@
+.nav {
+    border-bottom: 2px solid grey;
+    margin-bottom: 10px;
+  }
+  .nav ul {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* text-decoration: none; */
+    margin-bottom: 0;
+  }
+  
+  .nav li {
+    cursor: pointer;
+  }
+  
+  .nav li:hover {
+    background-color:dodgerblue;
+    /* color: white; */
+  }
+  
+  .nav li:nth-child(4) {
+    padding-left: 100px;
+    cursor: default;
+  }
+  
+  .nav li:nth-child(4):hover {
+    background-color: transparent;
+  }
+  
+  .nav li:nth-child(5) {
+    cursor: default;
+  }
+  
+  .nav li:nth-child(5):hover {
+    background-color: transparent;
+  }
+  
+  .nav-image {
+    height: 30px;
+    border-radius: 50%;
+  }
+  

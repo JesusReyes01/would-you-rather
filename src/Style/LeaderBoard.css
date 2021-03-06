@@ -1,0 +1,44 @@
+.leaderboard-details {
+    text-align: left;
+    /* padding: 0 10px 0 10px; */
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 180px;
+}
+.score-total {
+    height: 90px;
+    margin: 0 10px 0 0;
+    /* padding: 0 10px 0 10px; */
+    border: 1px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+.score-total-header {
+    background-color: rgb(235, 235, 235);
+    height:35px;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 0 15px 0 15px;
+}
+.total {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.total-circle {
+    background-color: dodgerblue;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+

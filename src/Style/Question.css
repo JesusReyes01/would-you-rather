@@ -1,0 +1,50 @@
+.question-header {
+    background-color: lightgrey;
+    border-bottom: 1px solid lightgrey;
+    height: 40px;
+    display: flex;
+    align-items:center;
+    padding-left: 10px;
+  }
+  
+  .question-content {
+    display:flex;
+    align-items: center;
+    height: 120px;
+  }
+  
+  .question-image{
+    height: 90px;
+    border-radius: 50%;
+    margin: 0 10px 0 10px;
+  }
+  
+  .poll-preview {
+    height: 90px;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .question-preview {
+    color: rgb(160, 160, 160);
+    font-size: 14px;
+  }
+  
+  .poll-button{
+    background-color: white;
+    border-radius: 4px;
+    padding: 3px;
+    color: dodgerblue;
+    border: 2px solid dodgerblue;
+    outline: none;
+  }
+  
+  .poll-button:active{
+    border: 2px solid rgb(127, 0, 211);
+    color: rgb(127, 0, 211);
+    
+  }
