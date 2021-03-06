@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
 const Leaderboard = (props) => {
     const { user } = props
     const { answers, avatarURL, name, questions} = user
+
+    useEffect(() => {
+        if(!props.authedUser){
+            props.history.push('/')
+        }
+    },[]);
+
     return( 
         <div className='container center flex'>
             <div>

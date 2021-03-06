@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 
 
@@ -7,6 +7,12 @@ const CreateQuestion = (props) => {
         questionOne: '',
         questionTwo: '',
     })
+
+    useEffect(() => {
+        if(!props.authedUser){
+            props.history.push('/')
+        }
+    },[]);
 
     const handleInput = e => {
         const { name, value } = e.target
