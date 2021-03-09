@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React  from 'react'
 import { connect } from 'react-redux'
-import {formatDate, formatQuestion} from '../Utils/helpers'
+import { formatQuestion } from '../Utils/helpers'
 import Unanswered from './Unanwered'
 import Results from './Results'
 

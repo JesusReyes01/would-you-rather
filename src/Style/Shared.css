@@ -68,8 +68,7 @@ li {
   border-left: 1px solid lightgrey;
   width: 1px;
   display:block;
-  /* margin: 0 auto; */
-  height: 90px;
+  height: 100%;
 }
 
 .flex {
