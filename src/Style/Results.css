@@ -50,6 +50,7 @@
 }
 
 .voted-for {
+    background-color: rgb(204, 228, 252);
     border-color: dodgerblue;
     color: dodgerblue;
 }
