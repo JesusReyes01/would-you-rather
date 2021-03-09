@@ -9,6 +9,7 @@ import CreateQuestion from './CreateQuestion'
 import Home from './Home'
 import QuestionPage from './QuestionPage'
 import LeaderBoard from './LeaderBoard'
+import Results from './Results'
 
 
 
@@ -36,6 +37,7 @@ const App = (props) => {
               <Route path='/new' component={CreateQuestion} />
               <Route path='/question/:id' component={QuestionPage} />
               <Route path='/leaderboard' component={LeaderBoard} />
+              <Route path='/results/:id' component={Results} />
             </div>
           }
         </div>
