@@ -1,7 +1,8 @@
-import { getInitialData } from '../Utils/api'
-import { receiveUsers } from '../Actions/users'
-import { receiveQuestions } from '../Actions/questions'
-import { showLoading, hideLoading } from 'react-redux-loading'
+import { getInitialData, saveQuestionAnswer } from '../Utils/api'
+import { receiveUsers, saveUserAnswer } from '../Actions/users'
+import { receiveQuestions, saveAnswer } from '../Actions/questions'
+import { showLoading, hideLoading } from 'react-redux-loading' 
+
 
 export function handleInitialData () {
     return (dispatch) => {
@@ -12,6 +13,28 @@ export function handleInitialData () {
                 dispatch(receiveQuestions(questions))
                 dispatch(hideLoading())
 
+            })
+    }
+}
+
+export function handleSaveAnswer (qid, answer) {
+    return (dispatch, getState) => {
+        const { authedUser } = getState()
+        dispatch(showLoading())
+        dispatch(saveAnswer ({
+            qid,
+            authedUser,
+            answer,
+        }))
+        dispatch(saveUserAnswer ({
+            qid,
+            authedUser,
+            answer, 
+        }))
+
+        return saveQuestionAnswer({authedUser, qid, answer}) 
+            .then(() => {
+                dispatch(hideLoading())
             })
     }
 }

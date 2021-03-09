@@ -56,11 +56,11 @@ const Results = (props) => {
 
 const  mapStateToProps = ({authedUser, users, questions}, props) => {
     const id = props.match ? props.match.params.id : props.id
-    // const id = props.id
 
     const question = questions[id]
 
     return {
+        users,
         id,
         rawQuestion: question,
         authedUser,

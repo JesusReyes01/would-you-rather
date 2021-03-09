@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../Utils/helpers'
 import { withRouter } from 'react-router-dom'
-
-
+import { handleSaveAnswer } from '../Actions/shared'
 
 const Unanswered = (props) => {
     const [option, setOption] = useState()
@@ -18,12 +17,16 @@ const Unanswered = (props) => {
     const handleChange = (e) => {
         setOption(e.target.value)
     }
-    const toResult = (e, id) => {
-        e.preventDefault()
-        history.push(`/results/${id}`)
-    } 
+    // const toResult = (e, id) => {
+    //     e.preventDefault()
+    //     history.push(`/results/${id}`)
+    // } 
     const handleSubmit = (e) => {
         e.preventDefault()
+        const { dispatch } = props
+        dispatch(handleSaveAnswer(id, option))
+        setOption('')
+        history.push(`/results/${id}`)
     }
 
     return (
@@ -48,9 +51,9 @@ const Unanswered = (props) => {
                         {optionTwoText}</label>
                     <button 
                         className='poll-button' 
-                        type='button'
+                        type='submit'
                         // disabled={option !== 'optionOne' || option !== 'optionTwo'} 
-                        onClick={(e) => toResult(e, id)}
+                        // onClick={(e) => toResult(e, id)}
                         >Submit</button>
                 </form>
             </div>

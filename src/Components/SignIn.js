@@ -14,10 +14,10 @@ const SignIn = (props) => {
     }
     
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
         dispatch(setAuthedUser(user))
         history.push('/home')
-
     }
     
     const options = usersId.map( e => ({
@@ -50,12 +50,8 @@ const SignIn = (props) => {
                         onChange={handleSelect}
                         
                     />
-                    {/* <select>
-                        {usersId.map((id) => (
-                            <Options id={id} key={id}/> 
-                        ))}
-                    </select> */}
                     <button 
+                        type='submit'
                         className='btn'
                         disabled={user === ''}>Sign In</button>
                 </form>

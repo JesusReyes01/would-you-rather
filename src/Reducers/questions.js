@@ -8,13 +8,15 @@ export default function tweets (state = {}, action) {
                 ...action.questions
             }
         case SAVE_ANSWER :
-            return {
+            const {qid, answer, authedUser} = action
+            return{
                 ...state,
-                [action.id]: {
-                    ...state[action.id],
-                    likes: action.hasLiked === true
-                    ? state[action.id].likes.filter((uid) => uid !== action.authedUser)
-                    : state[action.id].likes.concat([action.authedUser])
+                [qid]: {
+                    ...state[qid],
+                    [answer]: {
+                        ...state[action.qid][answer],
+                        votes: state[qid][answer].votes.concat([authedUser])
+                    }
                 }
             }
         case ADD_QUESTION :
