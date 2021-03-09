@@ -36,13 +36,13 @@ const Home = (props) => {
             </div>
             <ul className='home-questions'>
                 {hasVoted === 'false' ?
-                    votedIds.map((id)=>(
+                    unVotedIds.map((id)=>(
                         <li key={id}>
                             <Question id={id} />
                         </li>
                     ))
                 :
-                    unVotedIds.map((id)=>(
+                    votedIds.map((id)=>(
                         <li key={id}>
                             <Question id={id} />
                         </li>

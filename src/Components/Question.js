@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {formatDate, formatQuestion} from '../Utils/helpers'
+import { formatQuestion} from '../Utils/helpers'
 import { Link, withRouter } from 'react-router-dom'
 
 
