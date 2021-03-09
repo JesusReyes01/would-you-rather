@@ -62,5 +62,7 @@ const CreateQuestion = (props) => {
         </div>
     )
 }
-
-export default connect()(CreateQuestion)
+const mapStateToProps = ({ authedUser }) => ({
+    authedUser
+})
+export default connect(mapStateToProps)(CreateQuestion)

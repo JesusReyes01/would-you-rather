@@ -41,6 +41,8 @@
     color: dodgerblue;
     border: 2px solid dodgerblue;
     outline: none;
+    text-align: center;
+    font-size: 13.3px;
   }
   
   .poll-button:active{

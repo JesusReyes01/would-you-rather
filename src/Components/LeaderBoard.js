@@ -17,7 +17,7 @@ const Leaderboard = (props) => {
                 <img
                     src={avatarURL}
                     alt='asker image'
-                    className='question-image'
+                    className='leaderboard-image'
                 />
             </div>
             <span className='vertical-line'></span>
@@ -49,8 +49,9 @@ const Leaderboard = (props) => {
     )
 }
 
-const mapStateToProps = ({ users }) => ({
-    user: users['johndoe']
+const mapStateToProps = ({ users, authedUser}) => ({
+    user: users['johndoe'],
+    authedUser
 })
 
 export default connect(mapStateToProps)(Leaderboard)

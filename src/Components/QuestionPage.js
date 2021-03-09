@@ -53,8 +53,7 @@ const QuestionPage = (props) => {
 }
 
 const  mapStateToProps = ({authedUser, users, questions}, props) => {
-    // const { id } = props.match.params
-    const  id  = 'xj352vofupe1dqz9emx13r'
+    const { id } = props.match.params
     const question = questions[id]
 
     return {

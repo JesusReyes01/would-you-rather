@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom'
 
 
 const Question = (props) => {
-    const { question } = props
+    const { question, id } = props
     if (question === null) {
         return <p>This tweet doesn't exist</p>
     }
@@ -31,10 +31,10 @@ const Question = (props) => {
                 <div className='poll-preview'>
                     <p><strong>Would you rather</strong></p>
                     <p className='question-preview'>...{optionOneText}...</p>
-                    <button 
-                        className='poll-button' 
-                        onClick={handleClick}
-                        type='button'>View Poll</button>
+                    <Link 
+                        to={`/question/${id}`}
+                        className='poll-button' >View Poll
+                    </Link>
                 </div>
             </div>
         </div>
