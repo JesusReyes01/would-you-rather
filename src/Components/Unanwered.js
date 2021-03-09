@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom'
 const Unanswered = (props) => {
     const [option, setOption] = useState()
 
-    const { question, id } = props
+    const { question, id, history } = props
     if (question === null) {
         return <p>This tweet doesn't exist</p>
     }
@@ -18,10 +18,12 @@ const Unanswered = (props) => {
     const handleChange = (e) => {
         setOption(e.target.value)
     }
-
+    const toResult = (e, id) => {
+        e.preventDefault()
+        history.push(`/results/${id}`)
+    } 
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.history.push(`/results/${id}`)
     }
 
     return (
@@ -48,6 +50,7 @@ const Unanswered = (props) => {
                         className='poll-button' 
                         type='button'
                         // disabled={option !== 'optionOne' || option !== 'optionTwo'} 
+                        onClick={(e) => toResult(e, id)}
                         >Submit</button>
                 </form>
             </div>

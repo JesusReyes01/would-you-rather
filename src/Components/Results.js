@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { formatQuestion } from '../Utils/helpers'
 import ProgressBar from './ProgressBar'
 
-
 const Results = (props) => {
     const { question, authedUser } = props
     const { avatar, name, optionOneText, optionTwoText, optionOneVotes, optionTwoVotes} = question
@@ -55,7 +54,10 @@ const Results = (props) => {
     )
 }
 
-const  mapStateToProps = ({authedUser, users, questions}, { id }) => {
+const  mapStateToProps = ({authedUser, users, questions}, props) => {
+    const id = props.match ? props.match.params.id : props.id
+    // const id = props.id
+
     const question = questions[id]
 
     return {
