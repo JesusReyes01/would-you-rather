@@ -25,7 +25,7 @@ const Results = (props) => {
             <div className='results-content'>
                 <img
                     src={avatar}
-                    alt='asker image'
+                    alt={name}
                     className='results-image'
                 />
                 <span className='vertical-line'></span>

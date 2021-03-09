@@ -4,12 +4,13 @@ import Question from './Question'
 
 
 const Home = (props) => {
-    const { votedIds, unVotedIds, questions } = props
+    const { votedIds, unVotedIds } = props
     const [hasVoted, setToggle] = useState('false')
 
     useEffect(() => {
-        if(!props.authedUser){
-            props.history.push('/')
+        const { authedUser, history } = props
+        if(!authedUser){
+            history.push('/')
         }
     },[]);
 
@@ -59,17 +60,18 @@ const mapStateToProps = ({ questions, authedUser }) => {
         .sort((a,b) => questions[b].timestamp -  questions[a].timestamp)
     const votedIds = []
     const unVotedIds = []
-    questionIds.map( e => {
-        if(questions[e].optionOne.votes.includes(authedUser)){
-            votedIds.push(e)
+
+    for( let i = 0; i < questionIds.length; i++){
+        if(questions[questionIds[i]].optionOne.votes.includes(authedUser)){
+            votedIds.push(questionIds[i])
         }
-        else if(questions[e].optionTwo.votes.includes(authedUser)){
-            votedIds.push(e)
+        else if(questions[questionIds[i]].optionTwo.votes.includes(authedUser)){
+            votedIds.push(questionIds[i])
         }
         else {
-            unVotedIds.push(e)
+            unVotedIds.push(questionIds[i])
         }
-    })
+    }
 
     return{
     authedUser: authedUser ?? null,

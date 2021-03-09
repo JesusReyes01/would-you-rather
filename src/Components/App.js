@@ -14,8 +14,9 @@ import Results from './Results'
 
 
 const App = (props) => {
-  const { dispatch } = props
+  
   useEffect(() => {
+    const { dispatch } = props
     dispatch(handleInitialData())
   }, [])
 

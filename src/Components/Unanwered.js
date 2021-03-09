@@ -17,10 +17,7 @@ const Unanswered = (props) => {
     const handleChange = (e) => {
         setOption(e.target.value)
     }
-    // const toResult = (e, id) => {
-    //     e.preventDefault()
-    //     history.push(`/results/${id}`)
-    // } 
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const { dispatch } = props
@@ -37,7 +34,7 @@ const Unanswered = (props) => {
             <div className='question-content'>
                 <img
                     src={avatar}
-                    alt='asker image'
+                    alt={name}
                     className='question-image'
                 />
                 <span className='vertical-line'></span>
@@ -52,8 +49,7 @@ const Unanswered = (props) => {
                     <button 
                         className='poll-button' 
                         type='submit'
-                        // disabled={option !== 'optionOne' || option !== 'optionTwo'} 
-                        // onClick={(e) => toResult(e, id)}
+                        disabled={option === ''} 
                         >Submit</button>
                 </form>
             </div>
@@ -62,7 +58,6 @@ const Unanswered = (props) => {
 }
 
 const  mapStateToProps = ({authedUser, users, questions}, { id }) => {
-    // const { id } = props.match.params
     const question = questions[id]
 
     return {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import { handleAddQuestion } from '../Actions/questions'
+import { handleAddQuestion } from '../Actions/shared'
 import { Redirect } from 'react-router-dom'
 
 
@@ -14,8 +14,9 @@ const CreateQuestion = (props) => {
     })
 
     useEffect(() => {
-        if(!props.authedUser){
-            props.history.push('/')
+        const { authedUser, history } = props
+        if(!authedUser){
+            history.push('/')
         }
     },[]);
 

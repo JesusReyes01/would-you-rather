@@ -1,17 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion} from '../Utils/helpers'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const Question = (props) => {
     const { question, id } = props
     if (question === null) {
         return <p>This tweet doesn't exist</p>
-    }
-
-    const handleClick = (e) => {
-        e.preventDefault()
     }
 
     const { avatar, name, optionOneText} = question
@@ -24,7 +20,7 @@ const Question = (props) => {
             <div className='question-content'>
                 <img
                     src={avatar}
-                    alt='asker image'
+                    alt={name}
                     className='question-image'
                 />
                 <span className='vertical-line'></span>

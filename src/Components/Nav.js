@@ -30,7 +30,7 @@ const Nav = (props) => {
                     <li>
                         <img
                             src={users[authedUser].avatarURL}
-                            alt={`${users[authedUser].name} image`}
+                            alt={users[authedUser].name}
                             className='nav-image'
                             />
                     </li>
