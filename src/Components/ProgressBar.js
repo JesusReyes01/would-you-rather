@@ -9,7 +9,7 @@ const ProgressBar = (props) => {
         width: '100%',
         backgroundColor: "#e0e0de",
         borderRadius: 4,
-        marginTop: 20,
+        marginTop: 10,
 
     }
   
@@ -28,8 +28,11 @@ const ProgressBar = (props) => {
         color: 'white',
     }
 
-    if( completed === 0) {
-        labelStyles.visibility = 'hidden'
+    if( completed < 15 ) {
+        labelStyles.color = 'black';
+        labelStyles.left = 35;
+        labelStyles.position = 'relative';
+
     }
   
     return (

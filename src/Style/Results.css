@@ -4,7 +4,7 @@
     justify-content: space-between;
     /* height: 120px; */
     padding: 10px;
-    height: 240px;
+    height: 270px;
 }
 
 .results-image{
@@ -44,6 +44,9 @@
 
 .vote-count{
     text-align: center;
+    font-weight: bold;
+    color: black;
+
 }
 
 .voted-for {
