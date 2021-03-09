@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../Utils/helpers'
+import ProgressBar from './ProgressBar'
 
 
 const Results = (props) => {
@@ -13,6 +14,10 @@ const Results = (props) => {
     }else{
         votedFor ='optionTwo'
     }
+
+    let percentageOne = (optionOneVotes.length / totalVotes ) * 100
+    let percentageTwo = (optionTwoVotes.length / totalVotes ) * 100
+
     return (
         <div className='container center'>
             <div className='question-header'>
@@ -29,6 +34,7 @@ const Results = (props) => {
                     <p><strong>Results:</strong></p>
                     <div className={votedFor === 'optionOne' ? 'results-question voted-for' : 'results-question'}>
                         <p>Would you rather {optionOneText}?</p>
+                        <ProgressBar completed={percentageOne} />
                         <div className='vote-count'>
                             {optionOneVotes.length} out of {totalVotes} votes
                         </div>
@@ -36,6 +42,7 @@ const Results = (props) => {
                     
                     <div className={votedFor === 'optionTwo' ? 'results-question voted-for' : 'results-question'}>
                         <p>Would you rather {optionTwoText}?</p>
+                        <ProgressBar completed={percentageTwo} />
                         <div className='vote-count'>
                             {optionTwoVotes.length} out of {totalVotes} votes
                         </div>
