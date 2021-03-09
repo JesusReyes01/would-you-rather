@@ -1,5 +1,5 @@
 .nav {
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid dodgerblue;
     margin-bottom: 10px;
   }
   .nav ul {
@@ -7,12 +7,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* text-decoration: none; */
     margin-bottom: 0;
   }
   
   .nav li {
     cursor: pointer;
+    border-radius: 5px;
   }
   
   .nav li:hover {

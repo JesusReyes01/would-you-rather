@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
+import { handleAddQuestion } from '../Actions/questions'
+import { Redirect } from 'react-router-dom'
+
 
 
 const CreateQuestion = (props) => {
+
     const [state, setState] = useState({
         questionOne: '',
         questionTwo: '',
+        toHome: false
     })
 
     useEffect(() => {
@@ -20,8 +25,22 @@ const CreateQuestion = (props) => {
     }
 
     const handleSubmit = (e) => {
+        e.preventDefault()
+        const { dispatch, id } = props
+        const { questionOne, questionTwo} = state
+        dispatch(handleAddQuestion(questionOne, questionTwo))
 
+        setState(() => ({
+            questionOne: '',
+            questionTwo: '',
+            toHome: id ? false : true,
+        }))
     }
+
+    if(state.toHome === true){
+        return <Redirect to='/home' />
+    }
+
     return(
         <div className='container center'>
             <div className='create-question-header'>

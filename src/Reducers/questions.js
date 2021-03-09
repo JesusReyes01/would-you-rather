@@ -18,21 +18,11 @@ export default function tweets (state = {}, action) {
                 }
             }
         case ADD_QUESTION :
-            const { tweet } = action
+            const { question } = action
 
-            let replyingTo = {}
-            if (tweet.replyingTo !== null) {
-                replyingTo = {
-                    [tweet.replyingTo]: {
-                        ...state[tweet.replyingTo],
-                        replies: state[tweet.replyingTo].replies.concat([tweet.id])
-                    }
-                }
-            }
             return {
                 ...state,
-                [tweet.id]: tweet,
-                ...replyingTo
+                [question.id]: question,
             }
         default :
             return state
