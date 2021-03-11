@@ -13,12 +13,12 @@ const LeaderBoard= (props) => {
     },[]);
     
     return(
-        <div>
+        <ul className='leaderboard-list'>
             {users.map( (userId) => (
                 <LeaderBoardUser id={userId}/>
             ))}
             
-        </div>
+        </ul>
     )
 }
 

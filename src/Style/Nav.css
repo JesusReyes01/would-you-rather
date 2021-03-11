@@ -12,29 +12,44 @@
   
   .nav li {
     cursor: pointer;
+    /* background-color:rgb(201, 227, 252); */
     border-radius: 5px;
+    padding: 15px 20px 15px 20px;
   }
   
-  .nav li:hover {
+  .nav li:hover{
     background-color:dodgerblue;
-    /* color: white; */
+    color: white;
   }
-  
+  .nav li::before, .nav li::after {
+    background-color: #ddc385;
+    width: 10px;
+    height: 10px;
+  }
+  .nav li:before {
+    left: -10px;      
+  }
+  .nav li:after { 
+    right: -10px;
+  }
+
+  .nav li:hover a {
+    color: white;
+  }
+
   .nav li:nth-child(4) {
     padding-left: 100px;
     cursor: default;
+    color: black;
   }
   
-  .nav li:nth-child(4):hover {
+  .nav li:nth-child(4):hover,
+  .nav li:nth-child(5):hover {
     background-color: transparent;
   }
   
   .nav li:nth-child(5) {
     cursor: default;
-  }
-  
-  .nav li:nth-child(5):hover {
-    background-color: transparent;
   }
   
   .nav-image {

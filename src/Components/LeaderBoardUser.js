@@ -6,7 +6,7 @@ const LeaderboardUser = (props) => {
     const { answers, avatarURL, name, questions} = user
 
     return( 
-        <div className='container center flex'>
+        <li className='container center flex leaderboard-item'>
             <div>
                 <img
                     src={avatarURL}
@@ -39,7 +39,7 @@ const LeaderboardUser = (props) => {
             </div>
                 
             
-        </div>
+        </li>
     )
 }
 

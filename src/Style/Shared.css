@@ -34,7 +34,6 @@ ul {
 
 li {
   list-style-type: none;
-  padding: 10px;
   text-decoration: none;
 }
 
@@ -67,7 +66,7 @@ li {
 .vertical-line {
   border-left: 1px solid lightgrey;
   width: 1px;
-  display:block;
+  display: block;
   height: 100%;
 }
 

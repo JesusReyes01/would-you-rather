@@ -20,7 +20,7 @@ const Nav = (props) => {
                     <NavLink to={'/new'}>New Question</NavLink>
                 </li>
                 <li>
-                <NavLink to={'/leaderboard'}>Leader Board</NavLink>
+                    <NavLink to={'/leaderboard'}>Leader Board</NavLink>
                 </li>
                 {authedUser ? 
                 <>
