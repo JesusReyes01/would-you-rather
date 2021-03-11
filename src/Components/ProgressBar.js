@@ -29,7 +29,7 @@ const ProgressBar = (props) => {
 
     if( completed < 15 ) {
         labelStyles.color = 'black';
-        labelStyles.left = 35;
+        labelStyles.left = 40;
         labelStyles.position = 'relative';
 
     }

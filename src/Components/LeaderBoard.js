@@ -14,16 +14,19 @@ const LeaderBoard= (props) => {
     
     return(
         <div>
-            {users.map( userId => (
-            <LeaderBoardUser id={userId}/>
+            {users.map( (userId) => (
+                <LeaderBoardUser id={userId}/>
             ))}
+            
         </div>
     )
 }
 
 const mapStateToProps = ({ users, authedUser }) => ({
-    users: Object.keys(users),
-    authedUser
+    authedUser,
+    users: Object.keys(users)
+        .sort((a,b) => (Object.keys(users[b].answers).length + users[b].questions.length)
+        - (Object.keys(users[a].answers).length + users[a].questions.length))
 })
 
 export default connect(mapStateToProps)(LeaderBoard)

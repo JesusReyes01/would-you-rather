@@ -10,7 +10,8 @@
   .question-content {
     display:flex;
     align-items: center;
-    height: 120px;
+    height: 90px;
+    padding: 10px 0 10px 0;
   }
   
   .question-image{
@@ -20,7 +21,7 @@
   }
   
   .poll-preview {
-    height: 90px;
+    height: 100%;
     width: 100%;
     display:flex;
     flex-direction: column;
