@@ -38,4 +38,10 @@
   .css-1okebmr-indicatorSeparator {
     margin: 5px 0 5px 0 !important;
   }
+
+  .new-player h4{
+    text-decoration: underline;
+    color: dodgerblue;
+    margin-top: 20px;
+  }
   

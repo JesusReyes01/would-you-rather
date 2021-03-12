@@ -10,6 +10,7 @@ import Home from './Home'
 import QuestionPage from './QuestionPage'
 import LeaderBoard from './LeaderBoard'
 import Results from './Results'
+import NewPlayer from './NewPlayer'
 
 
 
@@ -39,6 +40,7 @@ const App = (props) => {
               <Route path='/question/:id' component={QuestionPage} />
               <Route path='/leaderboard' component={LeaderBoard} />
               <Route path='/results/:id' component={Results} />
+              <Route path='/newPlayer' component={NewPlayer} />
             </div>
           }
         </div>

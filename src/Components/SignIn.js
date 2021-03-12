@@ -35,29 +35,34 @@ const SignIn = (props) => {
     };
 
     return (
-        <div className='container center'>
-            <div className='sign-in-header'>
-                <h3>Welcome to the Would You Rather App!</h3>
-                <span>Please sign in to continue</span>
+        <div>
+            <div className='container center'>
+                <div className='sign-in-header'>
+                    <h3>Welcome to the Would You Rather App!</h3>
+                    <span>Please sign in to continue</span>
+                </div>
+                <div>
+                    <img src={appImg} alt="Would You Rather?" width="200" height="200"/>
+                    <h2>Sign In</h2>
+                    <form className='sign-in-form' onSubmit={handleSubmit}>
+                        <Select 
+                            placeholder='Select User'
+                            options={options}
+                            components={{ Option: UserOptions}}
+                            styles={styles}
+                            onChange={handleSelect}
+                            
+                        />
+                        <button 
+                            type='submit'
+                            className='btn'
+                            disabled={user === ''}>Sign In</button>
+                    </form>
+                </div>
             </div>
-            <div>
-                <img src={appImg} alt="Would You Rather?" width="200" height="200"/>
-                <h2>Sign In</h2>
-                <form className='sign-in-form' onSubmit={handleSubmit}>
-                    <Select 
-                        placeholder='Select User'
-                        options={options}
-                        components={{ Option: UserOptions}}
-                        styles={styles}
-                        onChange={handleSelect}
-                        
-                    />
-                    <button 
-                        type='submit'
-                        className='btn'
-                        disabled={user === ''}>Sign In</button>
-                </form>
-            </div>
+            <Link to='newPlayer'  className='center new-player'>
+                <h4>Add new player!</h4>
+            </Link>
         </div>
     );
 }
