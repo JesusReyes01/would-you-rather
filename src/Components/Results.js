@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../Utils/helpers'
 import ProgressBar from './ProgressBar'
+import defaultImage from '../Images/default-image.png'
+
 
 const Results = (props) => {
     const { question, authedUser } = props
@@ -17,6 +19,10 @@ const Results = (props) => {
     let percentageOne = (optionOneVotes.length / totalVotes ) * 100
     let percentageTwo = (optionTwoVotes.length / totalVotes ) * 100
 
+    const addDefaultImage = (e) => {
+        e.target.src = defaultImage
+    }
+
     return (
         <div className='container center'>
             <div className='question-header'>
@@ -26,6 +32,7 @@ const Results = (props) => {
                 <img
                     src={avatar}
                     alt={name}
+                    onError={addDefaultImage}
                     className='results-image'
                 />
                 <span className='vertical-line'></span>
