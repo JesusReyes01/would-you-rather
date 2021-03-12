@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { formatQuestion } from '../Utils/helpers'
 import { withRouter } from 'react-router-dom'
 import { handleSaveAnswer } from '../Actions/shared'
+import defaultImage from '../Images/default-image.png'
+
 
 const Unanswered = (props) => {
     const [option, setOption] = useState()
@@ -26,6 +28,10 @@ const Unanswered = (props) => {
         history.push(`/results/${id}`)
     }
 
+    const addDefaultImage = (e) => {
+        e.target.src = defaultImage
+    }
+
     return (
         <div className='container center'>
             <div className='question-header'>
@@ -35,6 +41,7 @@ const Unanswered = (props) => {
                 <img
                     src={avatar}
                     alt={name}
+                    onError={addDefaultImage}
                     className='question-image'
                 />
                 <span className='vertical-line'></span>
