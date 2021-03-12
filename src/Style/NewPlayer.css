@@ -22,3 +22,11 @@
     padding: 2px 10px;
     border-radius: 4px;
 }
+
+.to-sign-in {
+    margin-top: 20px;
+}
+
+.to-sign-in a{
+    color: dodgerblue;
+}

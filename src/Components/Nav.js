@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { logoutUser } from '../Actions/authedUser'
 import { NavLink, withRouter } from 'react-router-dom'
+import defaultImage from '../Images/default-image.png'
+
 
 const Nav = (props) => {
     const { authedUser, users, dispatch, history } = props
@@ -10,6 +12,11 @@ const Nav = (props) => {
         dispatch(logoutUser())
         history.push('/')
     }
+
+    const addDefaultImage = (e) => {
+        e.target.src = defaultImage
+    }
+
     return (
         <nav className='nav'>
             <ul>
@@ -31,6 +38,7 @@ const Nav = (props) => {
                         <img
                             src={users[authedUser].avatarURL}
                             alt={users[authedUser].name}
+                            onError={addDefaultImage}
                             className='nav-image'
                             />
                     </li>

@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion} from '../Utils/helpers'
 import { Link } from 'react-router-dom'
+import defaultImage from '../Images/default-image.png'
+
 
 
 const Question = (props) => {
@@ -12,6 +14,9 @@ const Question = (props) => {
 
     const { avatar, name, optionOneText} = question
     
+    const addDefaultImage = (e) => {
+        e.target.src = defaultImage
+    }
     return(
         <div className='container center'>
             <div className='question-header'>
@@ -21,6 +26,7 @@ const Question = (props) => {
                 <img
                     src={avatar}
                     alt={name}
+                    onError={addDefaultImage}
                     className='question-image'
                 />
                 <span className='vertical-line'></span>

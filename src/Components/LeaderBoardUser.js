@@ -1,9 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import defaultImage from '../Images/default-image.png'
+
 
 const LeaderboardUser = (props) => {
     const { user } = props
     const { answers, avatarURL, name, questions} = user
+
+    const addDefaultImage = (e) => {
+        e.target.src = defaultImage
+    }
 
     return( 
         <li className='container center flex leaderboard-item'>
@@ -11,6 +17,7 @@ const LeaderboardUser = (props) => {
                 <img
                     src={avatarURL}
                     alt={name}
+                    onError={addDefaultImage}
                     className='leaderboard-image'
                 />
             </div>
