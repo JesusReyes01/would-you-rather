@@ -9,6 +9,7 @@ const LeaderBoard= (props) => {
         const { authedUser, history } = props
         if(!authedUser){
             history.push('/')
+            alert('Please sign in')
         }
     },[]);
     
