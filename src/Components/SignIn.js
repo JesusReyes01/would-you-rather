@@ -4,6 +4,8 @@ import appImg from '../Images/would-you-rather.png'
 import UserOptions from './UserOptions'
 import Select from "react-select";
 import { setAuthedUser } from '../Actions/authedUser'
+import { Link } from 'react-router-dom'
+
 
 const SignIn = (props) => {
     const { usersId, users, dispatch, history } = props

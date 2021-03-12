@@ -37,6 +37,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 .vote-count{
@@ -50,4 +51,23 @@
     background-color: rgb(204, 228, 252);
     border-color: dodgerblue;
     color: dodgerblue;
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: rgb(224, 202, 1);
+    border: 2px solid rgb(175, 165, 26);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 8px;
+    font-weight: 700;
+    color: white;
+    /* padding: 5px; */
 }

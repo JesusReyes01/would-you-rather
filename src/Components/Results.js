@@ -32,6 +32,10 @@ const Results = (props) => {
                 <div className='results-questions'>
                     <p><strong>Results:</strong></p>
                     <div className={votedFor === 'optionOne' ? 'results-question voted-for' : 'results-question'}>
+                        {votedFor === 'optionOne' ? 
+                            <div className='badge'>
+                                Your Vote
+                            </div>: null}
                         <p>Would you rather {optionOneText}?</p>
                         <ProgressBar completed={percentageOne.toFixed(1)} />
                         <div className='vote-count'>
@@ -40,6 +44,10 @@ const Results = (props) => {
                     </div>
                     
                     <div className={votedFor === 'optionTwo' ? 'results-question voted-for' : 'results-question'}>
+                        {votedFor === 'optionTwo' ? 
+                            <div className='badge'>
+                                Your Vote
+                            </div>: null}
                         <p>Would you rather {optionTwoText}?</p>
                         <ProgressBar completed={percentageTwo.toFixed(1)} />
                         <div className='vote-count'>

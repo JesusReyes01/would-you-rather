@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
+import { Link } from 'react-router-dom'
 
 
 const Home = (props) => {
@@ -37,12 +38,21 @@ const Home = (props) => {
                 </div>
             </div>
             <ul className='home-questions'>
-                {hasVoted === 'false' ?
+                {hasVoted === 'false' ? 
+                    unVotedIds.length !== 0 ?
                     unVotedIds.map((id)=>(
                         <li key={id}>
                             <Question id={id} />
                         </li>
                     ))
+                    :
+                    <>
+                        <h2>No Unanswered Questions</h2>
+                        <Link 
+                            to='/new'
+                            className='create-question-link'
+                            ><h3>Create New Question</h3></Link>
+                    </>
                 :
                     votedIds.map((id)=>(
                         <li key={id}>
