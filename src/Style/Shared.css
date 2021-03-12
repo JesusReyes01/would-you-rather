@@ -40,7 +40,6 @@ li {
 ::placeholder {
   color: lightgrey;
   font-size: 14px;
-  /* padding-left: .5em; */
 }
 
 .btn {
@@ -48,7 +47,6 @@ li {
   height: 30px;
   border: 1px solid lightgrey;
   border-radius: 4px;
-  /* background-color: rgb(137, 148, 241); */
 }
 
 .center {
@@ -60,7 +58,6 @@ li {
   margin: 0 auto;
   border: 2px solid lightgrey;
   border-radius: 4px;
-  /* background-color:rgb(8, 119, 211); */
 }
 
 .vertical-line {

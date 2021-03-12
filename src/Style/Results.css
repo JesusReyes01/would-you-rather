@@ -2,13 +2,11 @@
     display:flex;
     align-items: center;
     justify-content: space-between;
-    /* height: 120px; */
     padding: 10px;
     height: 270px;
 }
 
 .results-image{
-    /* height: 55%; */
     width: 150px;
     border-radius: 50%;
     padding: 0;
@@ -22,7 +20,6 @@
   }
 
 .results-questions{
-    /* padding: 0 10px 0 10px; */
     height: 100%;
     width: 260px;
     display: flex;

@@ -1,59 +1,72 @@
 .nav {
-    border-bottom: 2px solid dodgerblue;
-    margin-bottom: 10px;
-  }
-  .nav ul {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0;
-  }
-  
-  .nav li {
-    cursor: pointer;
-    /* background-color:rgb(201, 227, 252); */
-    border-radius: 5px;
-    padding: 15px 20px 15px 20px;
-  }
-  
-  .nav li:hover{
-    background-color:dodgerblue;
-    color: white;
-  }
-  .nav li::before, .nav li::after {
-    background-color: #ddc385;
-    width: 10px;
-    height: 10px;
-  }
-  .nav li:before {
-    left: -10px;      
-  }
-  .nav li:after { 
-    right: -10px;
-  }
+  border-bottom: 2px solid dodgerblue;
+  margin-bottom: 10px;
+}
 
-  .nav li:hover a {
-    color: white;
-  }
+.active {
+  background-color: dodgerblue;
+  color: white;
+  border-top-left-radius: 5px;
+	border-top-right-radius: 5px;  
+}
 
-  .nav li:nth-child(4) {
-    padding-left: 100px;
-    cursor: default;
-    color: black;
-  }
-  
-  .nav li:nth-child(4):hover,
-  .nav li:nth-child(5):hover {
-    background-color: transparent;
-  }
-  
-  .nav li:nth-child(5) {
-    cursor: default;
-  }
-  
-  .nav-image {
-    height: 30px;
-    border-radius: 50%;
-  }
-  
+.nav ul {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.nav li {
+  cursor: pointer;
+  border-top-left-radius: 15px;
+	border-top-right-radius: 15px;  
+  margin: 0 1px;
+}
+
+.nav li a{
+  cursor: pointer;
+  border-top-left-radius: 15px;
+	border-top-right-radius: 15px;  
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav li:hover{
+  background-color:dodgerblue;
+  color: white;
+}
+
+.nav li:hover a {
+  color: white; 
+}
+
+.nav li:nth-child(4) {
+  padding-left: 100px;
+  cursor: default;
+  color: black;
+}
+
+.nav li:nth-child(4):hover,
+.nav li:nth-child(5):hover {
+  background-color: transparent;
+}
+
+.nav li:nth-child(5) {
+  cursor: default;
+}
+
+.nav li:nth-child(6) {
+  padding: 15px 25px;
+  cursor: pointer;
+}
+
+.nav-image {
+  height: 30px;
+  border-radius: 50%;
+  padding: 0 10px 0 15px;
+
+}
