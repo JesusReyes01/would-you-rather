@@ -1,10 +1,8 @@
-import React, { useEffect }  from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../Utils/helpers'
 import Unanswered from './Unanswered'
 import Results from './Results'
-import { Redirect } from 'react-router-dom'
-
 
 const QuestionPage = (props) => {
     const { id, question } = props
