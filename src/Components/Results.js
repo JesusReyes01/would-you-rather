@@ -7,13 +7,14 @@ import defaultImage from '../Images/default-image.png'
 
 const Results = (props) => {
     const { question, authedUser } = props
-    useEffect(() => {
-        const { history } = props
-        if(!props.question){
-            history.push('/')
-            alert('Please sign in')
-        }
-    },[]);
+    if (question === null) {
+        return (
+            <div className='center'>
+                <h1>Page Not Found</h1>
+                <p>This question doesn't exist</p>
+            </div>
+        )
+    }
 
     // const { avatar, name, optionOneText, optionTwoText, optionOneVotes, optionTwoVotes} = question 
     const totalVotes = question.optionOneVotes.length + question.optionTwoVotes.length

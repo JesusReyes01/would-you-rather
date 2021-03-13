@@ -9,7 +9,12 @@ import { Redirect } from 'react-router-dom'
 const QuestionPage = (props) => {
     const { id, question } = props
     if (question === null) {
-        return <p>This question doesn't exist</p>
+        return (
+            <div className='center'>
+                <h1>Page Not Found</h1>
+                <p>This question doesn't exist</p>
+            </div>
+        )
     }
 
     if ( question.hasVoted === false ) {
