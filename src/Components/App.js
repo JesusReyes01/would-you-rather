@@ -36,7 +36,7 @@ const App = (props) => {
           : <div>
               <Route path='/' exact component={SignIn} />
               <Route path='/home' component={Home} />
-              <Route path='/new' component={CreateQuestion} />
+              <Route path='/add' component={CreateQuestion} />
               <Route path='/question/:id' component={QuestionPage} />
               <Route path='/leaderboard' component={LeaderBoard} />
               <Route path='/results/:id' component={Results} />

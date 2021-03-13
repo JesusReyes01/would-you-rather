@@ -24,7 +24,7 @@ const Nav = (props) => {
                     <NavLink to={'/home'}>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/new'}>New Question</NavLink>
+                    <NavLink to={'/add'}>New Question</NavLink>
                 </li>
                 <li>
                     <NavLink to={'/leaderboard'}>Leader Board</NavLink>

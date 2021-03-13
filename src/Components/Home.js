@@ -49,7 +49,7 @@ const Home = (props) => {
                     <>
                         <h2>No Unanswered Questions</h2>
                         <Link 
-                            to='/new'
+                            to='/add'
                             className='create-question-link'
                             ><h3>Create New Question</h3></Link>
                     </>
