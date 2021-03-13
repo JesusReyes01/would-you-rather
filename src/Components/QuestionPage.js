@@ -3,17 +3,14 @@ import { connect } from 'react-redux'
 import { formatQuestion } from '../Utils/helpers'
 import Unanswered from './Unanswered'
 import Results from './Results'
+import { Redirect } from 'react-router-dom'
+
 
 const QuestionPage = (props) => {
-    useEffect(() => {
-        const { history, question } = props
-        if(question.hasVoted === null){
-            history.push('/')
-            alert('Please sign in')
-        }
-    },[]);
-
     const { id, question } = props
+    if (question === null) {
+        return <p>This question doesn't exist</p>
+    }
 
     if ( question.hasVoted === false ) {
         return <Unanswered id = { id }/>

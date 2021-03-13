@@ -28,7 +28,7 @@ const CreateQuestion = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const { dispatch, id } = props
+        const { dispatch, id, history } = props
         const { questionOne, questionTwo} = state
         dispatch(handleAddQuestion(questionOne, questionTwo))
 
