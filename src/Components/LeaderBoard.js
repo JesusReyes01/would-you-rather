@@ -1,17 +1,16 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import LeaderBoardUser from './LeaderBoardUser'
+import { Redirect } from 'react-router-dom'
+
 
 const LeaderBoard= (props) => {
     const { users } = props
 
-    useEffect(() => {
-        const { authedUser, history } = props
-        if(!authedUser){
-            history.push('/')
-            alert('Please sign in')
-        }
-    },[]);
+    if(!props.authedUser) {
+        alert('Please sign in.')
+        return <Redirect to='/' />
+    }
     
     return(
         <ul className='leaderboard-list'>

@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
+
 
 
 const Home = (props) => {
     const { votedIds, unVotedIds } = props
     const [hasVoted, setToggle] = useState('false')
 
-    useEffect(() => {
-        const { authedUser, history } = props
-        if(!authedUser){
-            history.push('/')
-            alert('Please sign in')
-        }
-    },[]);
+    if(!props.authedUser) {
+        alert('Please sign in.')
+        return <Redirect to='/' />
+    }
 
     const handleToggle = e => {
         const { id } = e.target

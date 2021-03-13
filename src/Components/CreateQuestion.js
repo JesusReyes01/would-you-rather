@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { handleAddQuestion } from '../Actions/shared'
 import { Redirect } from 'react-router-dom'
-
-
 
 const CreateQuestion = (props) => {
 
@@ -13,13 +11,10 @@ const CreateQuestion = (props) => {
         toHome: false
     })
 
-    useEffect(() => {
-        const { authedUser, history } = props
-        if(!authedUser){
-            history.push('/')
-            alert('Please sign in')
-        }
-    },[]);
+    if(!props.authedUser) {
+        alert('Please sign in.')
+        return <Redirect to='/' />
+    }
 
     const handleInput = e => {
         const { name, value } = e.target
