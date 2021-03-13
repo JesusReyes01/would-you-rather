@@ -1,18 +1,19 @@
 import React, { useEffect }  from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../Utils/helpers'
-import Unanswered from './Unanwered'
+import Unanswered from './Unanswered'
 import Results from './Results'
 
 const QuestionPage = (props) => {
-    const { id, question } = props
     useEffect(() => {
-        const { history } = props
-        if(question === null){
+        const { history, question } = props
+        if(question.hasVoted === null){
             history.push('/')
             alert('Please sign in')
         }
     },[]);
+
+    const { id, question } = props
 
     if ( question.hasVoted === false ) {
         return <Unanswered id = { id }/>

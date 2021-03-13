@@ -1,5 +1,5 @@
 import { getInitialData, saveQuestion, saveQuestionAnswer } from '../Utils/api'
-import { receiveUsers, addUserQuestion, saveUserAnswer } from '../Actions/users'
+import { receiveUsers, addUserQuestion, saveUserAnswer } from './users'
 import { receiveQuestions, addQuestion, saveAnswer } from '../Actions/questions'
 import { showLoading, hideLoading } from 'react-redux-loading' 
 

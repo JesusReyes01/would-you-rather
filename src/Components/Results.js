@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../Utils/helpers'
 import ProgressBar from './ProgressBar'
@@ -7,17 +7,25 @@ import defaultImage from '../Images/default-image.png'
 
 const Results = (props) => {
     const { question, authedUser } = props
-    const { avatar, name, optionOneText, optionTwoText, optionOneVotes, optionTwoVotes} = question
-    const totalVotes = optionOneVotes.length + optionTwoVotes.length
+    useEffect(() => {
+        const { history } = props
+        if(!props.question){
+            history.push('/')
+            alert('Please sign in')
+        }
+    },[]);
+
+    // const { avatar, name, optionOneText, optionTwoText, optionOneVotes, optionTwoVotes} = question 
+    const totalVotes = question.optionOneVotes.length + question.optionTwoVotes.length
     let votedFor = ''
-    if(optionOneVotes.includes(authedUser)){
+    if(question.optionOneVotes.includes(authedUser)){
         votedFor = 'optionOne'
     }else{
         votedFor ='optionTwo'
     }
 
-    let percentageOne = (optionOneVotes.length / totalVotes ) * 100
-    let percentageTwo = (optionTwoVotes.length / totalVotes ) * 100
+    let percentageOne = (question.optionOneVotes.length / totalVotes ) * 100
+    let percentageTwo = (question.optionTwoVotes.length / totalVotes ) * 100
 
     const addDefaultImage = (e) => {
         e.target.src = defaultImage
@@ -26,12 +34,12 @@ const Results = (props) => {
     return (
         <div className='container center'>
             <div className='question-header'>
-                <h4>Asked by {name}</h4>
+                <h4>Asked by {question.name}</h4>
             </div>
             <div className='results-content'>
                 <img
-                    src={avatar}
-                    alt={name}
+                    src={question.avatar}
+                    alt={question.name}
                     onError={addDefaultImage}
                     className='results-image'
                 />
@@ -43,10 +51,10 @@ const Results = (props) => {
                             <div className='badge'>
                                 Your Vote
                             </div>: null}
-                        <p>Would you rather {optionOneText}?</p>
+                        <p>Would you rather {question.optionOneText}?</p>
                         <ProgressBar completed={percentageOne.toFixed(1)} />
                         <div className='vote-count'>
-                            {optionOneVotes.length} out of {totalVotes} votes
+                            {question.optionOneVotes.length} out of {totalVotes} votes
                         </div>
                     </div>
                     
@@ -55,10 +63,10 @@ const Results = (props) => {
                             <div className='badge'>
                                 Your Vote
                             </div>: null}
-                        <p>Would you rather {optionTwoText}?</p>
+                        <p>Would you rather {question.optionTwoText}?</p>
                         <ProgressBar completed={percentageTwo.toFixed(1)} />
                         <div className='vote-count'>
-                            {optionTwoVotes.length} out of {totalVotes} votes
+                            {question.optionTwoVotes.length} out of {totalVotes} votes
                         </div>
                     </div>
 
@@ -79,7 +87,7 @@ const  mapStateToProps = ({authedUser, users, questions}, props) => {
         id,
         rawQuestion: question,
         authedUser,
-        question: question
+        question: question 
             ? formatQuestion(question, users[question.author], authedUser)
             : null
     }

@@ -8,9 +8,6 @@ import defaultImage from '../Images/default-image.png'
 
 const Question = (props) => {
     const { question, id } = props
-    if (question === null) {
-        return <p>This tweet doesn't exist</p>
-    }
 
     const { avatar, name, optionOneText} = question
     
