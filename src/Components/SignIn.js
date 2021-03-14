@@ -61,7 +61,7 @@ const SignIn = (props) => {
                 </div>
             </div>
             <Link to='newPlayer'  className='center new-player'>
-                <h3>Add new player!</h3>
+                <h3>Add New Player!</h3>
             </Link>
         </div>
     );
