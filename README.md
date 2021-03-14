@@ -9,4 +9,4 @@ This Web App was created to solify my understanding of React and Redux after com
 
 ## Planning
 
-The UI planning was done on Figma and can be viewed [here]('www.figma.com/file/eNsnuSPeqVR6RLBkD0MgMA/Would-you-rather?node-id=0%3A1')
+The UI planning was done on Figma and can be viewed [here]('https://figma.com/file/eNsnuSPeqVR6RLBkD0MgMA/Would-you-rather?node-id=0%3A1')
