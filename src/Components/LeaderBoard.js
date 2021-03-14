@@ -15,7 +15,7 @@ const LeaderBoard= (props) => {
     return(
         <ul className='leaderboard-list'>
             {users.map( (userId) => (
-                <LeaderBoardUser id={userId}/>
+                <LeaderBoardUser id={userId} key={userId}/>
             ))}
             
         </ul>
